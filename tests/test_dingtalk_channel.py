@@ -38,6 +38,7 @@ async def test_group_message_keeps_sender_id_and_routes_chat_id() -> None:
         sender_name="Alice",
         conversation_type="2",
         conversation_id="conv123",
+        media_paths=None,
     )
 
     msg = await bus.consume_inbound()

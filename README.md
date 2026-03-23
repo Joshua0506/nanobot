@@ -568,13 +568,34 @@ Uses **Stream Mode** — no public IP required.
       "enabled": true,
       "clientId": "YOUR_APP_KEY",
       "clientSecret": "YOUR_APP_SECRET",
-      "allowFrom": ["YOUR_STAFF_ID"]
+      "allowFrom": ["YOUR_STAFF_ID"],
+      "receiveFiles": true,
+      "maxFileSizeMb": 50,
+      "downloadTimeoutSeconds": 30
     }
   }
 }
 ```
 
 > `allowFrom`: Add your staff ID. Use `["*"]` to allow all users.
+>
+> **File Receiving**:
+> - `receiveFiles`: Enable/disable file attachment receiving (default: `true`)
+> - `maxFileSizeMb`: Maximum file size to download in MB (default: `50`)
+> - `downloadTimeoutSeconds`: Timeout for file downloads in seconds (default: `30`)
+>
+> **Supported File Types**:
+> - Images (JPG, PNG, GIF, BMP, WEBP)
+> - Documents (PDF, DOC, DOCX, XLSX, etc.)
+> - Audio (AMR, MP3, WAV, OGG, M4A, AAC)
+> - Video (MP4, MOV, AVI, MKV, WEBM)
+>
+> **Storage**: Downloaded files are saved to `~/.nanobot/instances/<instance>/media/dingtalk/`
+>
+> **AI Integration**: When users send files, the AI receives:
+> - Descriptive text: `[File: report.pdf (2.3MB)]`
+> - File metadata in message (path, name, size)
+> - Local file path for tool access
 
 **3. Run**
 

@@ -53,9 +53,14 @@ class DingTalkConfig(Base):
     """DingTalk channel configuration using Stream mode."""
 
     enabled: bool = False
-    client_id: str = ""  # AppKey
+    client_id: str = ""  # AppKey (for OAuth/authentication)
     client_secret: str = ""  # AppSecret
+    robot_code: str = ""  # Robot Code (for media download API)
+    workspace: str | None = None  # Custom workspace path (null = use global default)
     allow_from: list[str] = Field(default_factory=list)  # Allowed staff_ids
+    receive_files: bool = True  # Enable file attachment receiving
+    max_file_size_mb: int = 50  # Maximum file size to download (MB)
+    download_timeout_seconds: int = 30  # Timeout for file downloads
 
 
 class DiscordConfig(Base):
