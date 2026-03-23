@@ -569,6 +569,7 @@ Uses **Stream Mode** — no public IP required.
       "clientId": "YOUR_APP_KEY",
       "clientSecret": "YOUR_APP_SECRET",
       "allowFrom": ["YOUR_STAFF_ID"],
+      "robot_code":"YOUR_ROBOT_CODE",
       "receiveFiles": true,
       "maxFileSizeMb": 50,
       "downloadTimeoutSeconds": 30
@@ -576,7 +577,7 @@ Uses **Stream Mode** — no public IP required.
   }
 }
 ```
-
+> `robot_code`: Add your robot code. 
 > `allowFrom`: Add your staff ID. Use `["*"]` to allow all users.
 >
 > **File Receiving**:
